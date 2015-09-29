@@ -10,4 +10,7 @@
 
 @interface YACatalogViewController : UITableViewController
 
+@property (strong, nonatomic) UITabBarItem* CatalogTabBarItem;
+
+
 @end

@@ -1,20 +1,20 @@
 //
-//  YACatalogViewController.m
+//  YASelectionTableViewController.m
 //  YACSiOS
 //
-//  Created by james grippo on 9/27/15.
+//  Created by james grippo on 9/28/15.
 //  Copyright © 2015 james grippo. All rights reserved.
 //
 
-#import "YACatalogViewController.h"
+#import "YASelectionTableViewController.h"
 
-@interface YACatalogViewController ()
-
+@interface YASelectionTableViewController ()
 
 @end
 
-@implementation YACatalogViewController
+@implementation YASelectionTableViewController
 
+@synthesize SelectionTabBarItem;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,14 +26,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (instancetype)init
+-(instancetype) init
 {
     self = [super init];
     if (self)
     {
         [[self tableView] setDelegate:self];
         [[self tableView] setDataSource:self];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemMostViewed) tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMostViewed tag:2];
     }
     return self;
 }
@@ -47,12 +47,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 0;
+
+    return 1;
 }
 
 
@@ -63,8 +63,6 @@
     
     return cell;
 }
-
-
 
 
 
