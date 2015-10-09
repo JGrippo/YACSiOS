@@ -1,14 +1,14 @@
 //
-//  YASelectedTableViewCell.m
+//  YASelectionTableViewCell.m
 //  YACSiOS
 //
-//  Created by james grippo on 9/29/15.
+//  Created by james grippo on 10/9/15.
 //  Copyright © 2015 james grippo. All rights reserved.
 //
 
-#import "YASelectedTableViewCell.h"
+#import "YASelectionTableViewCell.h"
 
-@implementation YASelectedTableViewCell
+@implementation YASelectionTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

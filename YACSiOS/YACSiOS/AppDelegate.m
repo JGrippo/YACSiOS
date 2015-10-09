@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "YACatalogViewController.h"
-#import "YATabBarController.h"
+#import "YACalanderCollectionViewController.h"
+#import "YASelectionTableViewController.h"
+
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -20,7 +22,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[YATabBarController alloc] init]];
+    
+    UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = CGSizeMake(100, 100);
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+    YACatalogViewController* catalogvc = [[YACatalogViewController alloc] init];
+    
+    YACalanderCollectionViewController* calandervc = [[YACalanderCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
+    
+    YASelectionTableViewController* selectionvc = [[YASelectionTableViewController alloc] init];
+    
+    UITabBarController* tbvc = [[UITabBarController alloc] init];
+    
+    //tbvc.viewControllers = @[catalogvc,calandervc,selectionvc];
+    [tbvc setViewControllers:@[
+                                                    [[UINavigationController alloc] initWithRootViewController:catalogvc],
+                                                    [[UINavigationController alloc] initWithRootViewController:calandervc],
+                                                    [[UINavigationController alloc] initWithRootViewController:selectionvc]] animated:YES];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:tbvc];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

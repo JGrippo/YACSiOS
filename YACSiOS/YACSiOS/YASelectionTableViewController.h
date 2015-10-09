@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YASelectionTableViewCell.h"
 
 @interface YASelectionTableViewController : UITableViewController
 

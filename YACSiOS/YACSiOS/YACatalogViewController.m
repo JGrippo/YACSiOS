@@ -19,12 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+#pragma mark -Catalog Table View Init
 
 - (instancetype)init
 {
@@ -33,7 +30,8 @@
     {
         [[self tableView] setDelegate:self];
         [[self tableView] setDataSource:self];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemMostViewed) tag:0];
+        [[self tableView] registerClass:[YACatalogTableViewCell class] forCellReuseIdentifier:NSStringFromClass([YACatalogViewController class])];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemSearch) tag:0];
     }
     return self;
 }
@@ -43,7 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Catalog Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 

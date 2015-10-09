@@ -19,13 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+#pragma mark - Selection Table View Init
 -(instancetype) init
 {
     self = [super init];
@@ -33,7 +29,10 @@
     {
         [[self tableView] setDelegate:self];
         [[self tableView] setDataSource:self];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMostViewed tag:2];
+        [[self tableView] registerClass:[YASelectionTableViewCell class] forCellReuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
+        
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:2];
+        
     }
     return self;
 }
@@ -43,16 +42,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Selection Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 1;
+    return 0;
 }
 
 

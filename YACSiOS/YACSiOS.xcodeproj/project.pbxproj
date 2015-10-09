@@ -10,11 +10,10 @@
 		6106E04A1BB8C12100787236 /* YACatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0491BB8C12100787236 /* YACatalogViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6106E04E1BB9B74000787236 /* YACalanderCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E04D1BB9B74000787236 /* YACalanderCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6106E0511BB9B7DB00787236 /* YASelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0501BB9B7DB00787236 /* YASelectionTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6106E0541BB9BFBC00787236 /* YATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0531BB9BFBC00787236 /* YATabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0561BBB327D00787236 /* YACatalogTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		6106E05B1BBB32B600787236 /* YASelectedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E05A1BBB32B600787236 /* YASelectedTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E05D1BBB340900787236 /* YACalanderCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		61A5BFC71BAF386300E652CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFC61BAF386300E652CF /* main.m */; };
+		6112E8331BC857FF002197CE /* YASelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6169ED8D1BBB47A7008FFA32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6169ED8C1BBB47A7008FFA32 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFC91BAF386300E652CF /* AppDelegate.m */; };
 		61A5BFE31BAF386300E652CF /* YACSiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFE21BAF386300E652CF /* YACSiOSTests.m */; };
 		61A5BFEE1BAF386300E652CF /* YACSiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFED1BAF386300E652CF /* YACSiOSUITests.m */; };
@@ -46,16 +45,14 @@
 		6106E04D1BB9B74000787236 /* YACalanderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACalanderCollectionViewController.m; sourceTree = "<group>"; };
 		6106E04F1BB9B7DB00787236 /* YASelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASelectionTableViewController.h; sourceTree = "<group>"; };
 		6106E0501BB9B7DB00787236 /* YASelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASelectionTableViewController.m; sourceTree = "<group>"; };
-		6106E0521BB9BFBC00787236 /* YATabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YATabBarController.h; sourceTree = "<group>"; };
-		6106E0531BB9BFBC00787236 /* YATabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YATabBarController.m; sourceTree = "<group>"; };
 		6106E0551BBB327D00787236 /* YACatalogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACatalogTableViewCell.h; sourceTree = "<group>"; };
 		6106E0561BBB327D00787236 /* YACatalogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACatalogTableViewCell.m; sourceTree = "<group>"; };
-		6106E0591BBB32B600787236 /* YASelectedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASelectedTableViewCell.h; sourceTree = "<group>"; };
-		6106E05A1BBB32B600787236 /* YASelectedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASelectedTableViewCell.m; sourceTree = "<group>"; };
 		6106E05C1BBB340900787236 /* YACalanderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACalanderCollectionViewCell.h; sourceTree = "<group>"; };
 		6106E05D1BBB340900787236 /* YACalanderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACalanderCollectionViewCell.m; sourceTree = "<group>"; };
+		6112E8311BC857FF002197CE /* YASelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASelectionTableViewCell.h; sourceTree = "<group>"; };
+		6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASelectionTableViewCell.m; sourceTree = "<group>"; };
+		6169ED8C1BBB47A7008FFA32 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A5BFC21BAF386300E652CF /* YACSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A5BFC61BAF386300E652CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A5BFC81BAF386300E652CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61A5BFC91BAF386300E652CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		61A5BFD91BAF386300E652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,8 +116,6 @@
 				6106E0491BB8C12100787236 /* YACatalogViewController.m */,
 				6106E04C1BB9B74000787236 /* YACalanderCollectionViewController.h */,
 				6106E04D1BB9B74000787236 /* YACalanderCollectionViewController.m */,
-				6106E0521BB9BFBC00787236 /* YATabBarController.h */,
-				6106E0531BB9BFBC00787236 /* YATabBarController.m */,
 				6106E04F1BB9B7DB00787236 /* YASelectionTableViewController.h */,
 				6106E0501BB9B7DB00787236 /* YASelectionTableViewController.m */,
 			);
@@ -148,10 +143,10 @@
 		6106E0601BBB343200787236 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
-				6106E0591BBB32B600787236 /* YASelectedTableViewCell.h */,
-				6106E05A1BBB32B600787236 /* YASelectedTableViewCell.m */,
 				6106E0551BBB327D00787236 /* YACatalogTableViewCell.h */,
 				6106E0561BBB327D00787236 /* YACatalogTableViewCell.m */,
+				6112E8311BC857FF002197CE /* YASelectionTableViewCell.h */,
+				6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -194,7 +189,7 @@
 		61A5BFC51BAF386300E652CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				61A5BFC61BAF386300E652CF /* main.m */,
+				6169ED8C1BBB47A7008FFA32 /* main.m */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -379,14 +374,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6112E8331BC857FF002197CE /* YASelectionTableViewCell.m in Sources */,
 				6106E04A1BB8C12100787236 /* YACatalogViewController.m in Sources */,
 				6106E0511BB9B7DB00787236 /* YASelectionTableViewController.m in Sources */,
-				6106E05B1BBB32B600787236 /* YASelectedTableViewCell.m in Sources */,
 				6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */,
 				61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */,
 				6106E04E1BB9B74000787236 /* YACalanderCollectionViewController.m in Sources */,
-				61A5BFC71BAF386300E652CF /* main.m in Sources */,
-				6106E0541BB9BFBC00787236 /* YATabBarController.m in Sources */,
+				6169ED8D1BBB47A7008FFA32 /* main.m in Sources */,
 				6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

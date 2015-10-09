@@ -30,32 +30,25 @@ static NSString * const reuseIdentifier = @"Cell";
     // Do any additional setup after loading the view.
 }
 
-- (instancetype) init
+#pragma mark -Collection View Init
+-(instancetype) initWithCollectionViewLayout:(UICollectionViewLayout *)layout
 {
-    self = [super init];
-    if(self)
+    self = [super initWithCollectionViewLayout:layout];
+    if (self)
     {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMostViewed tag:1];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
     }
     return self;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark <UICollectionViewDataSource>
+#pragma mark -Collection View Data Source
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
@@ -76,7 +69,7 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark -Collection View Delegate
 
 
 

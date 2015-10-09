@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YACatalogTableViewCell.h"
 
 @interface YACatalogViewController : UITableViewController
 
