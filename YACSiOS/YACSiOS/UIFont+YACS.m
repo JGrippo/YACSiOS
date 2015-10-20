@@ -8,6 +8,15 @@
 
 #import "UIFont+YACS.h"
 
-@implementation UIFont_YACS
+@implementation UIFont (YACS)
+
++(UIFont*) yacsBoldText
+{
+    return [UIFont fontWithName:@"Helvetica-Bold" size:[UIFont systemFontSize]];
+}
++(UIFont*) yacsBlackText
+{
+    return [UIFont fontWithName:@"sans-serif" size:[UIFont systemFontSize]];
+}
 
 @end

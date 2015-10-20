@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor_YACS : UIColor
+@interface UIColor (YACS)
+
++(UIColor*) yacsBlackTitle;
++(UIColor*) yacsBlackText;
++(UIColor*) yacsGreyText;
++(UIColor*) yacsLightGreyText;
++(UIColor*) yacsBackground;
++(UIColor*) yacsRedHighlight;
++(UIColor*) yacsRedText;
++(UIColor*) yacsDarkRedText;
 
 @end

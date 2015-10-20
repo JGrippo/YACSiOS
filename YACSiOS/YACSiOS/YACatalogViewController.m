@@ -45,17 +45,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 0;
+    return 16;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    YACatalogTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YACatalogTableViewCell class])];
+    
+    if(!cell)
+    {
+        cell = [[YACatalogTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([YACatalogTableViewCell class])];
+    }
+    
+    cell.boldTextField.attributedPlaceholder =[[NSAttributedString alloc] initWithString:@"MAJR" attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
+    [[cell boldTextField] setFont:[UIFont yacsBoldText]];
+    
+    cell.descriptionTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"This is your major" attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
+    [[cell descriptionTextField] setFont:[UIFont yacsBlackText]];
     
     // Configure the cell...
     

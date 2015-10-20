@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "YACatalogTableViewCell.h"
+#import "UIFont+YACS.h"
+#import "UIColor+YACS.h"
 
 @interface YACatalogViewController : UITableViewController
 

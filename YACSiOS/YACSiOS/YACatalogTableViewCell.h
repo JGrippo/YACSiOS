@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
 
 @interface YACatalogTableViewCell : UITableViewCell
+
+@property (nonatomic) UITextField* boldTextField;
+@property (nonatomic) UITextField* descriptionTextField;
 
 @end

@@ -13,6 +13,8 @@
 		6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0561BBB327D00787236 /* YACatalogTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E05D1BBB340900787236 /* YACalanderCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6112E8331BC857FF002197CE /* YASelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		611667DD1BD4443A00D54657 /* UIColor+YACS.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667DC1BD4443A00D54657 /* UIColor+YACS.m */; settings = {ASSET_TAGS = (); }; };
+		611667E01BD44C1400D54657 /* UIFont+YACS.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667DF1BD44C1400D54657 /* UIFont+YACS.m */; settings = {ASSET_TAGS = (); }; };
 		6169ED8D1BBB47A7008FFA32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6169ED8C1BBB47A7008FFA32 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFC91BAF386300E652CF /* AppDelegate.m */; };
 		61A5BFE31BAF386300E652CF /* YACSiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFE21BAF386300E652CF /* YACSiOSTests.m */; };
@@ -51,6 +53,10 @@
 		6106E05D1BBB340900787236 /* YACalanderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACalanderCollectionViewCell.m; sourceTree = "<group>"; };
 		6112E8311BC857FF002197CE /* YASelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASelectionTableViewCell.h; sourceTree = "<group>"; };
 		6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASelectionTableViewCell.m; sourceTree = "<group>"; };
+		611667DB1BD4443A00D54657 /* UIColor+YACS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YACS.h"; sourceTree = "<group>"; };
+		611667DC1BD4443A00D54657 /* UIColor+YACS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YACS.m"; sourceTree = "<group>"; };
+		611667DE1BD44C1400D54657 /* UIFont+YACS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+YACS.h"; sourceTree = "<group>"; };
+		611667DF1BD44C1400D54657 /* UIFont+YACS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+YACS.m"; sourceTree = "<group>"; };
 		6169ED8C1BBB47A7008FFA32 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61A5BFC21BAF386300E652CF /* YACSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5BFC81BAF386300E652CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,6 +157,17 @@
 			name = "Table View";
 			sourceTree = "<group>";
 		};
+		611667DA1BD4440800D54657 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				611667DB1BD4443A00D54657 /* UIColor+YACS.h */,
+				611667DC1BD4443A00D54657 /* UIColor+YACS.m */,
+				611667DE1BD44C1400D54657 /* UIFont+YACS.h */,
+				611667DF1BD44C1400D54657 /* UIFont+YACS.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		61A5BFB91BAF386300E652CF = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +193,7 @@
 		61A5BFC41BAF386300E652CF /* YACSiOS */ = {
 			isa = PBXGroup;
 			children = (
+				611667DA1BD4440800D54657 /* Categories */,
 				61A5BFC51BAF386300E652CF /* Supporting Files */,
 				61A5BFC81BAF386300E652CF /* AppDelegate.h */,
 				61A5BFC91BAF386300E652CF /* AppDelegate.m */,
@@ -378,9 +396,11 @@
 				6106E04A1BB8C12100787236 /* YACatalogViewController.m in Sources */,
 				6106E0511BB9B7DB00787236 /* YASelectionTableViewController.m in Sources */,
 				6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */,
+				611667DD1BD4443A00D54657 /* UIColor+YACS.m in Sources */,
 				61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */,
 				6106E04E1BB9B74000787236 /* YACalanderCollectionViewController.m in Sources */,
 				6169ED8D1BBB47A7008FFA32 /* main.m in Sources */,
+				611667E01BD44C1400D54657 /* UIFont+YACS.m in Sources */,
 				6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

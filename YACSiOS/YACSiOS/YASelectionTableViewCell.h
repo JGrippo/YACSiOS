@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
 
 @interface YASelectionTableViewCell : UITableViewCell
+
+@property UITextField *textField;
+@property UISwitch *YASwitch;
 
 @end

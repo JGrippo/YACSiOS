@@ -46,18 +46,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return 15;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    YASelectionTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
     
+    if (!cell)
+    {
+        cell = [[YASelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
+    }
+    
+    if(indexPath.row % 5 == 0)
+    {
+        cell.textField.text = @"Pretend";
+    }
+    if(indexPath.row % 5 == 1)
+    {
+        cell.textField.text = @"There";
+    }
+    if(indexPath.row % 5 == 2)
+    {
+        cell.textField.text = @"Are";
+    }
+    if(indexPath.row % 5 == 3)
+    {
+        cell.textField.text = @"Courses";
+    }
+    if(indexPath.row % 5 == 4)
+    {
+        cell.textField.text = @"Here";
+    }
     // Configure the cell...
     
     return cell;

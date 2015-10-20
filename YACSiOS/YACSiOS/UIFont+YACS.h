@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIFont_YACS : UIFont
+@interface UIFont (YACS)
+
++(UIFont*) yacsBoldText;
++(UIFont*) yacsBlackText;
 
 @end
