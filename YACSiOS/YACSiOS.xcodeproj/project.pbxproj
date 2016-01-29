@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6106E04A1BB8C12100787236 /* YACatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0491BB8C12100787236 /* YACatalogViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6106E04E1BB9B74000787236 /* YACalanderCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E04D1BB9B74000787236 /* YACalanderCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6106E0511BB9B7DB00787236 /* YASelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0501BB9B7DB00787236 /* YASelectionTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0561BBB327D00787236 /* YACatalogTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E05D1BBB340900787236 /* YACalanderCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		6112E8331BC857FF002197CE /* YASelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		611667DD1BD4443A00D54657 /* UIColor+YACS.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667DC1BD4443A00D54657 /* UIColor+YACS.m */; settings = {ASSET_TAGS = (); }; };
-		611667E01BD44C1400D54657 /* UIFont+YACS.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667DF1BD44C1400D54657 /* UIFont+YACS.m */; settings = {ASSET_TAGS = (); }; };
-		6169ED8D1BBB47A7008FFA32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6169ED8C1BBB47A7008FFA32 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		6106E04A1BB8C12100787236 /* YACatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0491BB8C12100787236 /* YACatalogViewController.m */; };
+		6106E04E1BB9B74000787236 /* YACalanderCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E04D1BB9B74000787236 /* YACalanderCollectionViewController.m */; };
+		6106E0511BB9B7DB00787236 /* YASelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0501BB9B7DB00787236 /* YASelectionTableViewController.m */; };
+		6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E0561BBB327D00787236 /* YACatalogTableViewCell.m */; };
+		6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106E05D1BBB340900787236 /* YACalanderCollectionViewCell.m */; };
+		6112E8331BC857FF002197CE /* YASelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6112E8321BC857FF002197CE /* YASelectionTableViewCell.m */; };
+		611667DD1BD4443A00D54657 /* UIColor+YACS.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667DC1BD4443A00D54657 /* UIColor+YACS.m */; };
+		611667E01BD44C1400D54657 /* UIFont+YACS.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667DF1BD44C1400D54657 /* UIFont+YACS.m */; };
+		611667E31BD6E12C00D54657 /* YATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667E21BD6E12C00D54657 /* YATabBarController.m */; };
+		6169ED8D1BBB47A7008FFA32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6169ED8C1BBB47A7008FFA32 /* main.m */; };
+		618700111C5AF6B200C564BF /* YAHTTPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 618700101C5AF6B200C564BF /* YAHTTPResponseSerializer.m */; };
 		61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFC91BAF386300E652CF /* AppDelegate.m */; };
 		61A5BFE31BAF386300E652CF /* YACSiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFE21BAF386300E652CF /* YACSiOSTests.m */; };
 		61A5BFEE1BAF386300E652CF /* YACSiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFED1BAF386300E652CF /* YACSiOSUITests.m */; };
+		61DD48A01C5A916200A9C47B /* YAAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DD489F1C5A916200A9C47B /* YAAPI.m */; };
 		7CECBC445902FACB79702464 /* libPods-YACSiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC43A31B2CE27373E49737A /* libPods-YACSiOS.a */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +60,11 @@
 		611667DC1BD4443A00D54657 /* UIColor+YACS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YACS.m"; sourceTree = "<group>"; };
 		611667DE1BD44C1400D54657 /* UIFont+YACS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+YACS.h"; sourceTree = "<group>"; };
 		611667DF1BD44C1400D54657 /* UIFont+YACS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+YACS.m"; sourceTree = "<group>"; };
+		611667E11BD6E12C00D54657 /* YATabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YATabBarController.h; sourceTree = "<group>"; };
+		611667E21BD6E12C00D54657 /* YATabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YATabBarController.m; sourceTree = "<group>"; };
 		6169ED8C1BBB47A7008FFA32 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6187000F1C5AF6B200C564BF /* YAHTTPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAHTTPResponseSerializer.h; sourceTree = "<group>"; };
+		618700101C5AF6B200C564BF /* YAHTTPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAHTTPResponseSerializer.m; sourceTree = "<group>"; };
 		61A5BFC21BAF386300E652CF /* YACSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5BFC81BAF386300E652CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61A5BFC91BAF386300E652CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +75,8 @@
 		61A5BFE91BAF386300E652CF /* YACSiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YACSiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5BFED1BAF386300E652CF /* YACSiOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YACSiOSUITests.m; sourceTree = "<group>"; };
 		61A5BFEF1BAF386300E652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61DD489E1C5A916200A9C47B /* YAAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAAPI.h; sourceTree = "<group>"; };
+		61DD489F1C5A916200A9C47B /* YAAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAAPI.m; sourceTree = "<group>"; };
 		B8ABC3210517946FE1AD1EB9 /* Pods-YACSiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YACSiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YACSiOS/Pods-YACSiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C41124F3A5A28EAE3AB41905 /* Pods-YACSiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YACSiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-YACSiOS/Pods-YACSiOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +133,8 @@
 				6106E04D1BB9B74000787236 /* YACalanderCollectionViewController.m */,
 				6106E04F1BB9B7DB00787236 /* YASelectionTableViewController.h */,
 				6106E0501BB9B7DB00787236 /* YASelectionTableViewController.m */,
+				611667E11BD6E12C00D54657 /* YATabBarController.h */,
+				611667E21BD6E12C00D54657 /* YATabBarController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 		61A5BFC41BAF386300E652CF /* YACSiOS */ = {
 			isa = PBXGroup;
 			children = (
+				61DD489D1C5A914000A9C47B /* Managers */,
 				611667DA1BD4440800D54657 /* Categories */,
 				61A5BFC51BAF386300E652CF /* Supporting Files */,
 				61A5BFC81BAF386300E652CF /* AppDelegate.h */,
@@ -228,6 +240,17 @@
 				61A5BFED1BAF386300E652CF /* YACSiOSUITests.m */,
 			);
 			path = YACSiOSUITests;
+			sourceTree = "<group>";
+		};
+		61DD489D1C5A914000A9C47B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				61DD489E1C5A916200A9C47B /* YAAPI.h */,
+				61DD489F1C5A916200A9C47B /* YAAPI.m */,
+				6187000F1C5AF6B200C564BF /* YAHTTPResponseSerializer.h */,
+				618700101C5AF6B200C564BF /* YAHTTPResponseSerializer.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,14 +417,17 @@
 			files = (
 				6112E8331BC857FF002197CE /* YASelectionTableViewCell.m in Sources */,
 				6106E04A1BB8C12100787236 /* YACatalogViewController.m in Sources */,
+				611667E31BD6E12C00D54657 /* YATabBarController.m in Sources */,
 				6106E0511BB9B7DB00787236 /* YASelectionTableViewController.m in Sources */,
 				6106E0571BBB327D00787236 /* YACatalogTableViewCell.m in Sources */,
 				611667DD1BD4443A00D54657 /* UIColor+YACS.m in Sources */,
+				61DD48A01C5A916200A9C47B /* YAAPI.m in Sources */,
 				61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */,
 				6106E04E1BB9B74000787236 /* YACalanderCollectionViewController.m in Sources */,
 				6169ED8D1BBB47A7008FFA32 /* main.m in Sources */,
 				611667E01BD44C1400D54657 /* UIFont+YACS.m in Sources */,
 				6106E05E1BBB340900787236 /* YACalanderCollectionViewCell.m in Sources */,
+				618700111C5AF6B200C564BF /* YAHTTPResponseSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

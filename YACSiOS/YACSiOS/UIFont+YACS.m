@@ -12,11 +12,15 @@
 
 +(UIFont*) yacsBoldText
 {
-    return [UIFont fontWithName:@"Helvetica-Bold" size:[UIFont systemFontSize]];
+    return [UIFont fontWithName:@"Helvetica" size:18.0];
 }
 +(UIFont*) yacsBlackText
 {
     return [UIFont fontWithName:@"sans-serif" size:[UIFont systemFontSize]];
+}
++(UIFont*) yacsTitleText
+{
+    return [UIFont fontWithName:@"Helvetica" size:30.0];
 }
 
 @end

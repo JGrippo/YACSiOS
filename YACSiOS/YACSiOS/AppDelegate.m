@@ -22,27 +22,38 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //self.window.tintColor = [UIColor yacsBlackTitle];
     
     UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(100, 100);
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
     YACatalogViewController* catalogvc = [[YACatalogViewController alloc] init];
-    
     YACalanderCollectionViewController* calandervc = [[YACalanderCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
     
-    YASelectionTableViewController* selectionvc = [[YASelectionTableViewController alloc] init];
-    
     UITabBarController* tbvc = [[UITabBarController alloc] init];
-    
-    //tbvc.viewControllers = @[catalogvc,calandervc,selectionvc];
+
     [tbvc setViewControllers:@[
                                                     [[UINavigationController alloc] initWithRootViewController:catalogvc],
-                                                    [[UINavigationController alloc] initWithRootViewController:calandervc],
-                                                    [[UINavigationController alloc] initWithRootViewController:selectionvc]] animated:YES];
+                                                    [[UINavigationController alloc] initWithRootViewController:calandervc]] animated:YES];
+    [tbvc setTitle:@"YACS"];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBlackTitle], NSFontAttributeName:[UIFont yacsTitleText]}];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor yacsBackground]];
+    
+    [[UITabBar appearance] setTintColor:[UIColor yacsBlackText]];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor yacsBlackText], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    
+    
+    // set color of unselected text to green
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yacsRedHighlight], NSForegroundColorAttributeName, nil]
+                                             forState:UIControlStateNormal];
+    
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:tbvc];
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    
     return YES;
 }
 

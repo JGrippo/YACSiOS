@@ -24,7 +24,7 @@
         
         [self.contentView addSubview:descriptionTextField];
         [descriptionTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(0, 70, 0, 0));
+            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(0, 80, 0, 0));
             //make.centerY.equalTo(self.contentView.mas_centerY);
             
         }];
@@ -33,7 +33,7 @@
         [boldTextField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).with.offset(20);
             make.right.equalTo(descriptionTextField.mas_left);
-            make.centerY.equalTo(self.contentView.mas_centerY).with.offset(-1);
+            make.centerY.equalTo(self.contentView.mas_centerY).with.offset(-2);
         }];
     }
     return self;

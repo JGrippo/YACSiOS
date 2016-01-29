@@ -10,7 +10,7 @@
 
 @interface YACatalogViewController ()
 
-
+@property NSArray* departments;
 @end
 
 @implementation YACatalogViewController
@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchDepartments];
     
 }
 
@@ -32,6 +33,7 @@
         [[self tableView] setDataSource:self];
         [[self tableView] registerClass:[YACatalogTableViewCell class] forCellReuseIdentifier:NSStringFromClass([YACatalogViewController class])];
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemSearch) tag:0];
+        [[self tableView] setBackgroundColor:[UIColor yacsBackground]];
     }
     return self;
 }
@@ -62,6 +64,8 @@
         cell = [[YACatalogTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([YACatalogTableViewCell class])];
     }
     
+    cell.backgroundColor = [UIColor yacsBackground];
+    
     cell.boldTextField.attributedPlaceholder =[[NSAttributedString alloc] initWithString:@"MAJR" attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
     [[cell boldTextField] setFont:[UIFont yacsBoldText]];
     
@@ -73,8 +77,13 @@
     return cell;
 }
 
-
-
+-(void) fetchDepartments
+{
+    [[YAAPI API] getDepartments:^(NSArray *departments){
+        self.departments = departments;
+        [self.tableView reloadData];
+    }];
+}
 
 
 

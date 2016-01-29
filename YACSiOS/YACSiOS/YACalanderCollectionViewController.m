@@ -36,7 +36,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self = [super initWithCollectionViewLayout:layout];
     if (self)
     {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:1];
     }
     return self;
 }

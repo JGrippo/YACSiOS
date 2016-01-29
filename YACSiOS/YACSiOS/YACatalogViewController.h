@@ -10,10 +10,13 @@
 #import "YACatalogTableViewCell.h"
 #import "UIFont+YACS.h"
 #import "UIColor+YACS.h"
+#import "YAAPI.h"
 
 @interface YACatalogViewController : UITableViewController
 
 @property (strong, nonatomic) UITabBarItem* CatalogTabBarItem;
+
+-(void) fetchDepartments;
 
 
 @end
