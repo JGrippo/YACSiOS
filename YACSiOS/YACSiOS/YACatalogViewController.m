@@ -10,7 +10,7 @@
 
 @interface YACatalogViewController ()
 
-@property NSArray* departments;
+@property NSDictionary* departments;
 @end
 
 @implementation YACatalogViewController
@@ -47,12 +47,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    if (_departments == nil)
+        return 1;
+    else
+      return [_departments[@"schools"] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 16;
+    if (_departments == nil)
+        return 1;
+    else
+        return [[[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"departments"] count];
+}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if (_departments == nil)
+        return @"loading";
+    else
+        return [[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"name"];
+    
 }
 
 
@@ -63,18 +77,26 @@
     {
         cell = [[YACatalogTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([YACatalogTableViewCell class])];
     }
-    
-    cell.backgroundColor = [UIColor yacsBackground];
-    
-    cell.boldTextField.attributedPlaceholder =[[NSAttributedString alloc] initWithString:@"MAJR" attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
-    [[cell boldTextField] setFont:[UIFont yacsBoldText]];
-    
-    cell.descriptionTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"This is your major" attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
-    [[cell descriptionTextField] setFont:[UIFont yacsBlackText]];
-    
-    // Configure the cell...
-    
-    return cell;
+    if (_departments == nil)
+        return cell;
+        
+    else
+    {
+        cell.backgroundColor = [UIColor yacsBackground];
+
+        cell.boldTextField.attributedPlaceholder =
+        [[NSAttributedString alloc] initWithString: [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"code"]
+                                        attributes: @{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
+        
+        [[cell boldTextField] setFont:[UIFont yacsBoldText]];
+        
+        cell.descriptionTextField.attributedPlaceholder =
+        [[NSAttributedString alloc] initWithString: [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"name"]
+                                        attributes: @{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
+        [[cell descriptionTextField] setFont:[UIFont yacsBlackText]];
+        
+        return cell;
+    }
 }
 
 -(void) fetchDepartments
