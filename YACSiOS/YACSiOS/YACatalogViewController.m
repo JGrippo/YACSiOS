@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNeedsStatusBarAppearanceUpdate];
     [self fetchDepartments];
     
 }
@@ -69,6 +70,25 @@
     
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,200,300,244)];
+    tempView.backgroundColor=[UIColor yacsLightGreyText];
+    
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,-7,300,44)];
+    tempLabel.backgroundColor=[UIColor clearColor];
+    //tempLabel.shadowColor = [UIColor blackColor];
+    //tempLabel.shadowOffset = CGSizeMake(0,2);
+    tempLabel.textColor = [UIColor blackColor];
+    tempLabel.font = [UIFont yacsTitleItalicText];
+    tempLabel.text=[[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"name"];;
+    
+    [tempView addSubview:tempLabel];
+    
+    return tempView;
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YACatalogTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YACatalogTableViewCell class])];
@@ -97,6 +117,11 @@
         
         return cell;
     }
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 -(void) fetchDepartments

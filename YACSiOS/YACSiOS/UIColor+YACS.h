@@ -18,5 +18,6 @@
 +(UIColor*) yacsRedHighlight;
 +(UIColor*) yacsRedText;
 +(UIColor*) yacsDarkRedText;
++(UIColor*) yacsTitleRed;
 
 @end

@@ -42,6 +42,10 @@
 {
     return [UIColor colorWithRed:.47 green:.07 blue:.06 alpha:1];
 }
++(UIColor*) yacsTitleRed
+{
+    return [UIColor colorWithRed:.77 green:.13 blue:.13 alpha:1];
+}
 
 
 @end
