@@ -26,5 +26,9 @@
 {
     return [UIFont fontWithName:@"HelveticaNeue-ThinItalic" size:16.0];
 }
++(UIFont*) yacsYACS
+{
+    return [UIFont fontWithName:@"HelveticaNeue-Thin" size:30.0];
+}
 
 @end

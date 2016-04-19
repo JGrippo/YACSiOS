@@ -14,11 +14,11 @@
 
 @implementation YASelectionTableViewController
 
-@synthesize SelectionTabBarItem;
+@synthesize courses;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self fetchCourses];
 }
 
 #pragma mark - Selection Table View Init
@@ -31,8 +31,20 @@
         [[self tableView] setDataSource:self];
         [[self tableView] registerClass:[YASelectionTableViewCell class] forCellReuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
         
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:2];
+    }
+    return self;
+}
+
+-(instancetype) initWithDepartmentId:(NSString *) departmentId
+{
+    self = [super init];
+    if (self)
+    {
         
+        self.departmentId = departmentId;
+        [[self tableView] setDelegate:self];
+        [[self tableView] setDataSource:self];
+        [[self tableView] registerClass:[YASelectionTableViewCell class] forCellReuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
     }
     return self;
 }
@@ -42,16 +54,41 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Selection Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 1;
+    
+    if(courses ==nil)
+        return 1;
+    else
+        return [[courses valueForKey:@"courses"] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(courses ==nil)
+        return 1;
+    else
+        return [[[[courses valueForKey:@"courses"] objectAtIndex:section] valueForKey:@"sections"] count];
+}
 
-    return 15;
+-(UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(100,300,300,244)];
+    tempView.backgroundColor=[UIColor yacsLightGreyText];
+    
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,-7,300,44)];
+    tempLabel.backgroundColor=[UIColor clearColor];
+    //tempLabel.shadowColor = [UIColor blackColor];
+    //tempLabel.shadowOffset = CGSizeMake(0,2);
+    tempLabel.textColor = [UIColor blackColor];
+    tempLabel.font = [UIFont yacsTitleItalicText];
+    tempLabel.text=@"hi";
+    
+    [tempView addSubview:tempLabel];
+    
+    return tempView;
 }
 
 
@@ -88,7 +125,14 @@
     return cell;
 }
 
+- (void) fetchCourses
+{
+    [[YAAPI API] getCoursesForDepartment:self.departmentId completion:^(NSDictionary *getCourses) {
+        self.courses = getCourses;
+        [self.tableView reloadData];
+    }];
 
+}
 
 
 @end

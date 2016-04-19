@@ -7,6 +7,9 @@
 //
 
 #import "YATabBarController.h"
+#import "UIFont+YACS.h"
+#import "UIColor+YACS.h"
+#import "YAAPI.h"
 
 @interface YATabBarController ()
 
@@ -29,6 +32,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

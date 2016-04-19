@@ -14,5 +14,6 @@
 +(UIFont*) yacsBlackText;
 +(UIFont*) yacsTitleText;
 +(UIFont*) yacsTitleItalicText;
++(UIFont*) yacsYACS; 
 
 @end

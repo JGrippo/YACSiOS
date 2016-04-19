@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "YASelectionTableViewCell.h"
+#import "YACatalogTableViewCell.h"
+#import "UIFont+YACS.h"
+#import "UIColor+YACS.h"
+#import "YAAPI.h"
 
 @interface YASelectionTableViewController : UITableViewController
 
-@property (nonatomic) UITabBarItem* SelectionTabBarItem;
+@property (nonatomic) NSDictionary* courses;
+@property (nonatomic) NSString* departmentId;
+-(instancetype) initWithDepartmentId:(NSString *)departmentId;
+-(void) fetchCourses;
 
 @end

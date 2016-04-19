@@ -11,6 +11,7 @@
 @interface YACatalogViewController ()
 
 @property NSDictionary* departments;
+@property NSString* department_id;
 @end
 
 @implementation YACatalogViewController
@@ -36,6 +37,9 @@
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:(UITabBarSystemItemSearch) tag:0];
         [[self tableView] setBackgroundColor:[UIColor yacsBackground]];
     }
+    [self setTitle:@"YACS"];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBackground], NSFontAttributeName:[UIFont yacsYACS]}];
+    [self setNeedsStatusBarAppearanceUpdate];
     return self;
 }
 
@@ -72,7 +76,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,200,300,244)];
+    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(100,300,300,244)];
     tempView.backgroundColor=[UIColor yacsLightGreyText];
     
     UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,-7,300,44)];
@@ -119,6 +123,15 @@
     }
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString* departmentId = [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"id"];
+    YASelectionTableViewController* selvc = [[YASelectionTableViewController alloc] initWithDepartmentId: departmentId];
+    
+    [self.navigationController pushViewController:selvc animated:YES];
+    
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -126,7 +139,7 @@
 
 -(void) fetchDepartments
 {
-    [[YAAPI API] getDepartments:^(NSArray *departments){
+    [[YAAPI API] getDepartments:^(NSDictionary *departments){
         self.departments = departments;
         [self.tableView reloadData];
     }];

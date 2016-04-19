@@ -36,22 +36,17 @@
     [tbvc setViewControllers:@[
                                                     [[UINavigationController alloc] initWithRootViewController:catalogvc],
                                                     [[UINavigationController alloc] initWithRootViewController:calandervc]] animated:YES];
-    [tbvc setTitle:@"YACS"];
     [UINavigationBar appearance].barTintColor = [UIColor yacsRedHighlight];
     [[UINavigationBar appearance] setTranslucent:NO];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBlackTitle], NSFontAttributeName:[UIFont yacsTitleText]}];
     [[UITabBar appearance] setBarTintColor:[UIColor yacsBackground]];
     [[UITabBar appearance] setTintColor:[UIColor yacsBlackText]];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor yacsBlackText], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     // set color of unselected text to green
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yacsRedHighlight], NSForegroundColorAttributeName, nil]
-                                             forState:UIControlStateNormal];
-    
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:tbvc];
+                                             forState:UIControlStateSelected];
+    self.window.tintColor = [UIColor yacsBackground];
+    self.window.rootViewController = tbvc;
     [self.window makeKeyAndVisible];
-    
-    
-    
+
     return YES;
 }
 

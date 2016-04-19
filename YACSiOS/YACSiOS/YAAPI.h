@@ -13,5 +13,6 @@
 
 +(YAAPI*) API;
 
--(void) getDepartments:(void(^)(NSArray* departments))completion;
+-(void) getDepartments:(void(^)(NSDictionary* departments))completion;
+-(void) getCoursesForDepartment:(NSString*)department_id completion:(void(^)(NSDictionary* courses))completion;
 @end

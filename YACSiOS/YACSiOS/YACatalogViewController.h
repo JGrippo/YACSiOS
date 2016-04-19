@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YACatalogTableViewCell.h"
+#import "YASelectionTableViewController.h"
 #import "UIFont+YACS.h"
 #import "UIColor+YACS.h"
 #import "YAAPI.h"
