@@ -10,7 +10,7 @@
 
 @implementation YASelectionTableViewCell
 
-@synthesize textField;
+@synthesize Label;
 
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -18,12 +18,11 @@
     {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
-        textField = [[UITextField alloc] init];
-        [textField setPlaceholder:@"Selected Courses"];
-        [self.contentView addSubview:textField];        
+        Label = [[UILabel alloc] init];
+        [self.contentView addSubview:Label];        
         
         
-        [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        [Label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).with.offset(20);
             make.centerY.equalTo(self.contentView.mas_centerY).with.offset(-2);
         }];

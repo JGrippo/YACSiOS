@@ -14,7 +14,7 @@
 
 @implementation YASelectionTableViewController
 
-@synthesize courses;
+@synthesize courses, depTitle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,17 +35,21 @@
     return self;
 }
 
--(instancetype) initWithDepartmentId:(NSString *) departmentId
+-(instancetype) initWithDepartmentId:(NSString *) departmentId :(NSString*) departmentTitle
 {
     self = [super init];
     if (self)
     {
         
         self.departmentId = departmentId;
+        self.depTitle = departmentTitle;
         [[self tableView] setDelegate:self];
         [[self tableView] setDataSource:self];
         [[self tableView] registerClass:[YASelectionTableViewCell class] forCellReuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
     }
+    [self setTitle:depTitle];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBackground], NSFontAttributeName:[UIFont yacsYACS]}];
+    [self setNeedsStatusBarAppearanceUpdate];
     return self;
 }
 
@@ -73,6 +77,7 @@
         return [[[[courses valueForKey:@"courses"] objectAtIndex:section] valueForKey:@"sections"] count];
 }
 
+
 -(UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(100,300,300,244)];
@@ -84,11 +89,16 @@
     //tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor blackColor];
     tempLabel.font = [UIFont yacsTitleItalicText];
-    tempLabel.text=@"hi";
+    tempLabel.text=[[[self.courses valueForKey:@"courses"] objectAtIndex:section] valueForKey:@"name"];;
     
     [tempView addSubview:tempLabel];
     
     return tempView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
 }
 
 
@@ -100,29 +110,26 @@
         cell = [[YASelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
     }
     
-    if(indexPath.row % 5 == 0)
-    {
-        cell.textField.text = @"Pretend";
-    }
-    if(indexPath.row % 5 == 1)
-    {
-        cell.textField.text = @"There";
-    }
-    if(indexPath.row % 5 == 2)
-    {
-        cell.textField.text = @"Are";
-    }
-    if(indexPath.row % 5 == 3)
-    {
-        cell.textField.text = @"Courses";
-    }
-    if(indexPath.row % 5 == 4)
-    {
-        cell.textField.text = @"Here";
-    }
+    if (self.courses == nil)
+        return cell;
+    
+    NSNumber* num1 = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"seats"];
+    
+    NSNumber* num2 = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"seats_taken"];
+    
+    NSInteger seats = num1.integerValue-num2.integerValue;
+    
+    NSString* text =[[NSString alloc] initWithFormat:@"Section %ld Seats %ld", (long)indexPath.row+1, (long)seats];
+    cell.Label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
+    [[cell Label] setFont:[UIFont yacsBlackText]];
     // Configure the cell...
     
     return cell;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void) fetchCourses

@@ -17,7 +17,8 @@
 
 @property (nonatomic) NSDictionary* courses;
 @property (nonatomic) NSString* departmentId;
--(instancetype) initWithDepartmentId:(NSString *)departmentId;
+@property (nonatomic) NSString* depTitle;
+-(instancetype) initWithDepartmentId:(NSString *)departmentId :(NSString*) departmentTitle;
 -(void) fetchCourses;
 
 @end

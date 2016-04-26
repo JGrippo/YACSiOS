@@ -65,14 +65,7 @@
     else
         return [[[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"departments"] count];
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    if (_departments == nil)
-        return @"loading";
-    else
-        return [[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"name"];
-    
-}
+
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -84,15 +77,18 @@
     //tempLabel.shadowColor = [UIColor blackColor];
     //tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor blackColor];
-    tempLabel.font = [UIFont yacsTitleItalicText];
-    tempLabel.text=[[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"name"];;
+    tempLabel.font = [UIFont yacsBoldItalic];
+    tempLabel.text=[[[_departments valueForKey:@"schools"] objectAtIndex:section] valueForKey:@"name"];
     
     [tempView addSubview:tempLabel];
     
     return tempView;
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YACatalogTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YACatalogTableViewCell class])];
@@ -108,16 +104,16 @@
     {
         cell.backgroundColor = [UIColor yacsBackground];
 
-        cell.boldTextField.attributedPlaceholder =
+        cell.boldLabel.attributedText =
         [[NSAttributedString alloc] initWithString: [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"code"]
                                         attributes: @{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
         
-        [[cell boldTextField] setFont:[UIFont yacsBoldText]];
+        [[cell boldLabel] setFont:[UIFont yacsBoldText]];
         
-        cell.descriptionTextField.attributedPlaceholder =
+        cell.descriptionLabel.attributedText =
         [[NSAttributedString alloc] initWithString: [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"name"]
                                         attributes: @{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
-        [[cell descriptionTextField] setFont:[UIFont yacsBlackText]];
+        [[cell descriptionLabel] setFont:[UIFont yacsBlackText]];
         
         return cell;
     }
@@ -126,7 +122,8 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString* departmentId = [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"id"];
-    YASelectionTableViewController* selvc = [[YASelectionTableViewController alloc] initWithDepartmentId: departmentId];
+    NSString* title = [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"code"];
+    YASelectionTableViewController* selvc = [[YASelectionTableViewController alloc] initWithDepartmentId: departmentId :title];
     
     [self.navigationController pushViewController:selvc animated:YES];
     

@@ -66,9 +66,9 @@
 		6187000F1C5AF6B200C564BF /* YAHTTPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAHTTPResponseSerializer.h; sourceTree = "<group>"; };
 		618700101C5AF6B200C564BF /* YAHTTPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAHTTPResponseSerializer.m; sourceTree = "<group>"; };
 		61A5BFC21BAF386300E652CF /* YACSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A5BFC81BAF386300E652CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		61A5BFC91BAF386300E652CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		61A5BFD91BAF386300E652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61A5BFC81BAF386300E652CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		61A5BFC91BAF386300E652CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		61A5BFD91BAF386300E652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		61A5BFDE1BAF386300E652CF /* YACSiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YACSiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5BFE21BAF386300E652CF /* YACSiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YACSiOSTests.m; sourceTree = "<group>"; };
 		61A5BFE41BAF386300E652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,12 +204,9 @@
 		61A5BFC41BAF386300E652CF /* YACSiOS */ = {
 			isa = PBXGroup;
 			children = (
-				61DD489D1C5A914000A9C47B /* Managers */,
-				611667DA1BD4440800D54657 /* Categories */,
 				61A5BFC51BAF386300E652CF /* Supporting Files */,
-				61A5BFC81BAF386300E652CF /* AppDelegate.h */,
-				61A5BFC91BAF386300E652CF /* AppDelegate.m */,
-				61A5BFD91BAF386300E652CF /* Info.plist */,
+				611667DA1BD4440800D54657 /* Categories */,
+				61DD489D1C5A914000A9C47B /* Managers */,
 				6106E0581BBB328C00787236 /* Cells */,
 				6106E04B1BB8C9D400787236 /* View Controllers */,
 			);
@@ -219,6 +216,9 @@
 		61A5BFC51BAF386300E652CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				61A5BFC81BAF386300E652CF /* AppDelegate.h */,
+				61A5BFC91BAF386300E652CF /* AppDelegate.m */,
+				61A5BFD91BAF386300E652CF /* Info.plist */,
 				6169ED8C1BBB47A7008FFA32 /* main.m */,
 			);
 			path = "Supporting Files";

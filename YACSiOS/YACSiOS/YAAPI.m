@@ -16,7 +16,8 @@
     dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         netManager = [[YAAPI alloc] initWithBaseURL:[NSURL URLWithString:@"https://yacs.cs.rpi.edu"]];
-        netManager.responseSerializer = [[YAHTTPResponseSerializer alloc] init];
+        netManager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
+        netManager.responseSerializer.acceptableContentTypes = [netManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
         
     });
     return netManager;

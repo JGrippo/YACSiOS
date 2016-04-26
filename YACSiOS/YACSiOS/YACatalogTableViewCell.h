@@ -12,7 +12,7 @@
 
 @interface YACatalogTableViewCell : UITableViewCell
 
-@property (nonatomic) UITextField* boldTextField;
-@property (nonatomic) UITextField* descriptionTextField;
+@property (nonatomic) UILabel* boldLabel;
+@property (nonatomic) UILabel* descriptionLabel;
 
 @end
