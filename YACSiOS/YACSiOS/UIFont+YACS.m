@@ -34,5 +34,9 @@
 {
     return [UIFont fontWithName:@"HelveticaNeue-Italic" size:16.0];
 }
++(UIFont*) yacsHelveticaNeue
+{
+    return [UIFont fontWithName:@"HelveticaNeue" size:16.0];
+}
 
 @end

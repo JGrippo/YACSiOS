@@ -81,14 +81,14 @@
 -(UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(100,300,300,244)];
-    tempView.backgroundColor=[UIColor yacsLightGreyText];
+    tempView.backgroundColor=[UIColor yacsDarkBackground];
     
-    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,-7,300,44)];
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(10,-7,300,44)];
     tempLabel.backgroundColor=[UIColor clearColor];
     //tempLabel.shadowColor = [UIColor blackColor];
     //tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor blackColor];
-    tempLabel.font = [UIFont yacsTitleItalicText];
+    tempLabel.font = [UIFont yacsHelveticaNeue];
     tempLabel.text=[[[self.courses valueForKey:@"courses"] objectAtIndex:section] valueForKey:@"name"];;
     
     [tempView addSubview:tempLabel];

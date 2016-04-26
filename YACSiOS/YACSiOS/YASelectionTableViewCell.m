@@ -23,7 +23,7 @@
         
         
         [Label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView.mas_left).with.offset(20);
+            make.left.equalTo(self.contentView.mas_left).with.offset(30);
             make.centerY.equalTo(self.contentView.mas_centerY).with.offset(-2);
         }];
         

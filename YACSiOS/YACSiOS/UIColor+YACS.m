@@ -46,6 +46,11 @@
 {
     return [UIColor colorWithRed:.77 green:.13 blue:.13 alpha:1];
 }
++(UIColor*) yacsDarkBackground;
+{
+    return [UIColor colorWithRed:.8 green:.8 blue:.8 alpha:1];
+}
++(UIColor*) yacs
 
 
 @end
