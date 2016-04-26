@@ -38,7 +38,7 @@
         [[self tableView] setBackgroundColor:[UIColor yacsBackground]];
     }
     [self setTitle:@"YACS"];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBackground], NSFontAttributeName:[UIFont yacsYACS]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont yacsYACS], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self setNeedsStatusBarAppearanceUpdate];
     [self.tableView setSeparatorColor:[UIColor yacsSeparatorColor]];
     return self;
@@ -71,7 +71,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(100,300,300,244)];
-    tempView.backgroundColor=[UIColor yacsLightGreyText];
+    tempView.backgroundColor=[UIColor yacsDarkBackground];
     
     UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,-7,300,44)];
     tempLabel.backgroundColor=[UIColor clearColor];

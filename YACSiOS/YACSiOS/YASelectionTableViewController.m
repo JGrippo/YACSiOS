@@ -118,9 +118,21 @@
     
     NSNumber* num2 = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"seats_taken"];
     
+    NSArray* instructors = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"instructors"];
+    NSString* instructor;
+    
+    if(!instructors.count)
+    {
+        instructor = @"Not Available";
+    }
+    else
+    {
+        instructor = [instructors objectAtIndex:0];
+    }
+    
     NSInteger seats = num1.integerValue-num2.integerValue;
     
-    NSString* text =[[NSString alloc] initWithFormat:@"Section %ld Seats %ld", (long)indexPath.row+1, (long)seats];
+    NSString* text =[[NSString alloc] initWithFormat:@"Section %ld Seats %ld - %@", (long)indexPath.row+1, (long)seats, instructor];
     cell.Label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
     [[cell Label] setFont:[UIFont yacsBlackText]];
     // Configure the cell...
