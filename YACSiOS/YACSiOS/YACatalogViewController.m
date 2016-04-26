@@ -40,6 +40,7 @@
     [self setTitle:@"YACS"];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBackground], NSFontAttributeName:[UIFont yacsYACS]}];
     [self setNeedsStatusBarAppearanceUpdate];
+    [self.tableView setSeparatorColor:[UIColor yacsSeparatorColor]];
     return self;
 }
 

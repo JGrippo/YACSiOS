@@ -46,11 +46,14 @@
 {
     return [UIColor colorWithRed:.77 green:.13 blue:.13 alpha:1];
 }
-+(UIColor*) yacsDarkBackground;
++(UIColor*) yacsDarkBackground
 {
     return [UIColor colorWithRed:.8 green:.8 blue:.8 alpha:1];
 }
-+(UIColor*) yacs
++(UIColor*) yacsSeparatorColor
+{
+    return [UIColor colorWithRed:.6 green:.2 blue:.2 alpha:.5];
+}
 
 
 @end

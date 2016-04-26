@@ -49,6 +49,7 @@
     }
     [self setTitle:depTitle];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor yacsBackground], NSFontAttributeName:[UIFont yacsYACS]}];
+    [self.tableView setSeparatorColor:[UIColor yacsSeparatorColor]];
     [self setNeedsStatusBarAppearanceUpdate];
     return self;
 }
