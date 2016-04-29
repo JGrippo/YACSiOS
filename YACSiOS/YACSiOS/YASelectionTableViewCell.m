@@ -10,7 +10,7 @@
 
 @implementation YASelectionTableViewCell
 
-@synthesize Label;
+@synthesize Label, accessoryView;
 
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -19,12 +19,11 @@
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
         Label = [[UILabel alloc] init];
-        [self.contentView addSubview:Label];        
-        
-        
+        [self.contentView addSubview:Label];
+                
         [Label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).with.offset(30);
-            make.centerY.equalTo(self.contentView.mas_centerY).with.offset(-2);
+            make.centerY.equalTo(self.contentView.mas_centerY).with.offset(0);
         }];
         
     }

@@ -103,7 +103,7 @@
         
     else
     {
-        cell.backgroundColor = [UIColor yacsBackground];
+        cell.backgroundColor = [UIColor whiteColor];
 
         cell.boldLabel.attributedText =
         [[NSAttributedString alloc] initWithString: [[[[[_departments valueForKey:@"schools"] objectAtIndex:indexPath.section] valueForKey:@"departments"] objectAtIndex:indexPath.row] valueForKey:@"code"]

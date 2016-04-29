@@ -43,7 +43,7 @@
     // set color of unselected text to green
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yacsRedHighlight], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateSelected];
-    self.window.tintColor = [UIColor yacsBackground];
+    self.window.tintColor = [UIColor whiteColor];
     self.window.rootViewController = tbvc;
     [self.window makeKeyAndVisible];
 

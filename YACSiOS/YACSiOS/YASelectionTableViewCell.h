@@ -12,6 +12,5 @@
 @interface YASelectionTableViewCell : UITableViewCell
 
 @property UILabel *Label;
-@property UISwitch *YASwitch;
 
 @end

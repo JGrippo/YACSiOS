@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.allowsMultipleSelection = YES;
     [self fetchCourses];
 }
 
@@ -40,7 +41,6 @@
     self = [super init];
     if (self)
     {
-        
         self.departmentId = departmentId;
         self.depTitle = departmentTitle;
         [[self tableView] setDelegate:self];
@@ -106,6 +106,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YASelectionTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
     
+    // configure the cell
     if (!cell)
     {
         cell = [[YASelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([YASelectionTableViewCell class])];
@@ -114,30 +115,49 @@
     if (self.courses == nil)
         return cell;
     
+    // The variables dependant on the cell
+    
     NSNumber* num1 = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"seats"];
-    
     NSNumber* num2 = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"seats_taken"];
-    
     NSArray* instructors = [[[[[self.courses valueForKey:@"courses"] objectAtIndex:indexPath.section ] valueForKey:@"sections"] objectAtIndex:indexPath.row] valueForKey:@"instructors"];
     NSString* instructor;
     
+    // check to see if the array from the response object is null
+    
     if(!instructors.count)
-    {
         instructor = @"Not Available";
-    }
     else
-    {
         instructor = [instructors objectAtIndex:0];
-    }
+    
+    // Compute the string that goes in the label for the cell
     
     NSInteger seats = num1.integerValue-num2.integerValue;
     
     NSString* text =[[NSString alloc] initWithFormat:@"Section %ld Seats %ld - %@", (long)indexPath.row+1, (long)seats, instructor];
     cell.Label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
     [[cell Label] setFont:[UIFont yacsBlackText]];
-    // Configure the cell...
+    
+    // Create the view for selection
+    UIView *customColorView = [[UIView alloc] init];
+    customColorView.backgroundColor = [UIColor yacsRedHighlight];
+    cell.selectedBackgroundView =  customColorView;
     
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.accessoryView.hidden = NO;
+    tableViewCell.accessoryType = UITableViewCellAccessoryCheckmark;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.accessoryView.hidden = YES;
+    tableViewCell.accessoryType = UITableViewCellAccessoryNone;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
