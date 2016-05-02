@@ -20,5 +20,7 @@
 @property (nonatomic) NSString* depTitle;
 -(instancetype) initWithDepartmentId:(NSString *)departmentId :(NSString*) departmentTitle;
 -(void) fetchCourses;
+-(void) addBackButtonWithImageName:(NSString *) imageString;
+-(void) backButtonPressed;
 
 @end

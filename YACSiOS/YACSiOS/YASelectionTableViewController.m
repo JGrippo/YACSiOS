@@ -18,7 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.allowsMultipleSelection = YES;
+    [self addBackButtonWithImageName:@"back_button_image_name"];
+    
     [self fetchCourses];
 }
 
@@ -136,6 +139,7 @@
     NSString* text =[[NSString alloc] initWithFormat:@"Section %ld Seats %ld - %@", (long)indexPath.row+1, (long)seats, instructor];
     
     cell.Label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
+    
     [[cell Label] setFont:[UIFont yacsBlackText]];
     
     cell.Label.backgroundColor = [UIColor clearColor];
@@ -156,6 +160,18 @@
     tableViewCell.checkmark.hidden = YES;
 }
 
+- (void)addBackButtonWithImageName:(NSString *)imageName
+{
+    // init yor custom button
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(0, 0, 40, 40); // custom frame
+    [backButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    // set left barButtonItem to backButton
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -168,6 +184,12 @@
         [self.tableView reloadData];
     }];
 
+}
+
+- (void)backButtonPressed
+{
+    // write your code to prepare popview
+    
 }
 
 
