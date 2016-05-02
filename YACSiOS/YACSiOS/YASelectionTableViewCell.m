@@ -10,7 +10,7 @@
 
 @implementation YASelectionTableViewCell
 
-@synthesize Label, accessoryView;
+@synthesize Label, checkmark;
 
 -(instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -20,11 +20,21 @@
         
         Label = [[UILabel alloc] init];
         [self.contentView addSubview:Label];
+        
+        checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark"]];
+        [self.contentView addSubview:checkmark];
                 
         [Label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView.mas_left).with.offset(30);
+            make.left.equalTo(self.contentView.mas_left).with.offset(40);
             make.centerY.equalTo(self.contentView.mas_centerY).with.offset(0);
         }];
+        
+        [checkmark mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).with.offset(10);
+            make.centerY.equalTo(self.contentView.mas_centerY).with.offset(0);
+        }];
+        
+        checkmark.hidden = YES;
         
     }
     return self;

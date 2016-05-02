@@ -18,6 +18,7 @@
 		611667E31BD6E12C00D54657 /* YATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611667E21BD6E12C00D54657 /* YATabBarController.m */; };
 		6169ED8D1BBB47A7008FFA32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6169ED8C1BBB47A7008FFA32 /* main.m */; };
 		618700111C5AF6B200C564BF /* YAHTTPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 618700101C5AF6B200C564BF /* YAHTTPResponseSerializer.m */; };
+		6191DCB81CD429C300812C86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6191DCB71CD429C300812C86 /* Images.xcassets */; };
 		61A5BFCA1BAF386300E652CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFC91BAF386300E652CF /* AppDelegate.m */; };
 		61A5BFE31BAF386300E652CF /* YACSiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFE21BAF386300E652CF /* YACSiOSTests.m */; };
 		61A5BFEE1BAF386300E652CF /* YACSiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BFED1BAF386300E652CF /* YACSiOSUITests.m */; };
@@ -65,6 +66,7 @@
 		6169ED8C1BBB47A7008FFA32 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6187000F1C5AF6B200C564BF /* YAHTTPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAHTTPResponseSerializer.h; sourceTree = "<group>"; };
 		618700101C5AF6B200C564BF /* YAHTTPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAHTTPResponseSerializer.m; sourceTree = "<group>"; };
+		6191DCB71CD429C300812C86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Images.xcassets; sourceTree = "<group>"; };
 		61A5BFC21BAF386300E652CF /* YACSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5BFC81BAF386300E652CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		61A5BFC91BAF386300E652CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		61A5BFC51BAF386300E652CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6191DCB71CD429C300812C86 /* Images.xcassets */,
 				61A5BFC81BAF386300E652CF /* AppDelegate.h */,
 				61A5BFC91BAF386300E652CF /* AppDelegate.m */,
 				61A5BFD91BAF386300E652CF /* Info.plist */,
@@ -358,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6191DCB81CD429C300812C86 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

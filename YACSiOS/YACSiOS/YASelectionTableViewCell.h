@@ -12,5 +12,6 @@
 @interface YASelectionTableViewCell : UITableViewCell
 
 @property UILabel *Label;
+@property UIImageView* checkmark;
 
 @end

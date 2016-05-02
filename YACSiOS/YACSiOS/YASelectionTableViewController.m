@@ -134,13 +134,11 @@
     NSInteger seats = num1.integerValue-num2.integerValue;
     
     NSString* text =[[NSString alloc] initWithFormat:@"Section %ld Seats %ld - %@", (long)indexPath.row+1, (long)seats, instructor];
+    
     cell.Label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [UIColor yacsBlackTitle]}];
     [[cell Label] setFont:[UIFont yacsBlackText]];
     
-    // Create the view for selection
-    UIView *customColorView = [[UIView alloc] init];
-    customColorView.backgroundColor = [UIColor yacsRedHighlight];
-    cell.selectedBackgroundView =  customColorView;
+    cell.Label.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
@@ -148,16 +146,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
-    tableViewCell.accessoryView.hidden = NO;
-    tableViewCell.accessoryType = UITableViewCellAccessoryCheckmark;
+    YASelectionTableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.checkmark.hidden = NO;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
-    tableViewCell.accessoryView.hidden = YES;
-    tableViewCell.accessoryType = UITableViewCellAccessoryNone;
+    YASelectionTableViewCell *tableViewCell = [tableView cellForRowAtIndexPath:indexPath];
+    tableViewCell.checkmark.hidden = YES;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
