@@ -20,29 +20,34 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    // initiate the first window.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //self.window.tintColor = [UIColor yacsBlackTitle];
     
+    // Create the layout for our collection view.
     UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(100, 100);
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
+    // Catalog view controller is the table view controller that contains the department name within each school section.
     YACatalogViewController* catalogvc = [[YACatalogViewController alloc] init];
+    
+    // Calander view controller is the view controller that contains the collection view for the schedule.
     YACalanderCollectionViewController* calandervc = [[YACalanderCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
     
+    // Here were initiate the tab bar view controller than contains both the collection view ( tab on the right) and the table view controller ( tab on the left)
     UITabBarController* tbvc = [[UITabBarController alloc] init];
 
     [tbvc setViewControllers:@[
                                                     [[UINavigationController alloc] initWithRootViewController:catalogvc],
                                                     [[UINavigationController alloc] initWithRootViewController:calandervc]] animated:YES];
-    [UINavigationBar appearance].barTintColor = [UIColor yacsRedHighlight];
-    [[UINavigationBar appearance] setTranslucent:NO];
-    [[UITabBar appearance] setBarTintColor:[UIColor yacsBackground]];
-    [[UITabBar appearance] setTintColor:[UIColor yacsBlackText]];
-    // set color of unselected text to green
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yacsRedHighlight], NSForegroundColorAttributeName, nil]
-                                             forState:UIControlStateSelected];
+    [UINavigationBar appearance].barTintColor = [UIColor yacsRedHighlight]; //sets the navigation bar ( the one at the top ) text to red
+    [[UINavigationBar appearance] setTranslucent:NO]; // Keeps the navigation bar visible.
+    [[UITabBar appearance] setBarTintColor:[UIColor yacsBackground]]; // Sets the background of the tab bar view
+    [[UITabBar appearance] setTintColor:[UIColor yacsBlackText]]; // Sets the color of the icon to black
+    // This sets teh text underneath the icon to red.
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yacsRedHighlight], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    // sets teh background of the window to white and displays the tab bar view controller.
     self.window.tintColor = [UIColor whiteColor];
     self.window.rootViewController = tbvc;
     [self.window makeKeyAndVisible];
@@ -51,36 +56,24 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 #pragma mark - Split view
-/*
-- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
-        // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-        return YES;
-    } else {
-        return NO;
-    }
-} */
+
 
 @end
